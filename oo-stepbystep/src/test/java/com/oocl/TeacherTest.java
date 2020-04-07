@@ -11,8 +11,7 @@ public class TeacherTest {
         Teacher teacher = new Teacher();
         teacher.setAge(30);
         teacher.setName("Woody");
-        assertEquals("There is a teacher who will " +
-                "introduce himself like this: My name is Woody. " +
+        assertEquals("My name is Woody. " +
                 "I am 30 years old. Teaching for the future of world."
                 ,teacher.introduce());
     }
@@ -32,7 +31,7 @@ public class TeacherTest {
                         "I am 30 years old. " +
                         "Teaching for the future of world." +
                         " Welcome Tom join Klass 2."
-                ,cls.addStudentToClass(student));
+                ,teacher.welcomeStu(student, cls));
     }
 
     @Test
