@@ -1,12 +1,14 @@
 package com.oocl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Student extends Person {
 
     private Klass cls;
-    private ArrayList<String> welcomeMessages;
-    private ArrayList<String> stuLeaderMessages;
+    private Map<String, String> welcomeMessages = new HashMap<String, String>();
+    private Map<String, String> stuLeaderMessages = new HashMap<String, String>();
 
     @Override
     public Klass getCls() {
@@ -29,34 +31,33 @@ public class Student extends Person {
     ;
 
     public void welcomeOtherStu(Student stu) {
-        welcomeMessages.add(this.introduce() + String.format(" Welcome %s join Klass %s.", stu.getName(), this.cls.getName()));
+        String welcomeMsg = this.introduce() + String.format(" Welcome %s join Klass %s.", stu.getName(), this.cls.getName());
+        String key = this.getCls().getName()+stu.getName();
+        if(welcomeMessages.get(key) == null){
+            welcomeMessages.put(key, welcomeMsg);
+        }
     }
 
     public void stuLeaderIntrod() {
-        stuLeaderMessages.add(this.introduce() + String.format(" %s is the leader of Class %s.",
+        String stuLeaderMsg = this.introduce() + String.format(" %s is the leader of Class %s.",
                 this.getCls()
                         .getStudentLeader()
                         .getName(),
-                this.getCls().getName()));
+                this.getCls().getName());
+        String key = this.getCls().getName()+this.getCls().getStudentLeader().getName();
+        if(stuLeaderMessages.get(key) == null){
+            stuLeaderMessages.put(key, stuLeaderMsg);
+        }
+
     }
 
-    public void joinClass(Klass cls) {
-        cls.addStudentToClass(this);
-    }
-
-    public ArrayList<String> getWelcomeMessages() {
+    public Map<String, String> getWelcomeMessages() {
         return welcomeMessages;
     }
 
-    public void setWelcomeMessages(ArrayList<String> welcomeMessages) {
-        this.welcomeMessages = welcomeMessages;
-    }
 
-    public ArrayList<String> getStuLeaderMessages() {
+    public Map<String, String> getStuLeaderMessages() {
         return stuLeaderMessages;
     }
 
-    public void setStuLeaderMessages(ArrayList<String> stuLeaderMessages) {
-        this.stuLeaderMessages = stuLeaderMessages;
-    }
 }

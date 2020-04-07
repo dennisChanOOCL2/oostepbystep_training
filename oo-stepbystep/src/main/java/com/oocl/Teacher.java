@@ -15,29 +15,15 @@ public class Teacher extends Person {
         return welcomeMessage;
     }
 
-    public void setWelcomeMessage(Map<String, String> welcomeMessage) {
-        this.welcomeMessage = welcomeMessage;
-    }
-
     public Map<String, String> getIntrodStuLeaderMsg() {
         return introdStuLeaderMsg;
     }
 
-    public void setIntrodStuLeaderMsg(Map<String, String> introdStuLeaderMsg) {
-        this.introdStuLeaderMsg = introdStuLeaderMsg;
-    }
 
     public List<Klass> getClsList() {
         return clsList;
     }
 
-    public void setClsList(List<Klass> clsList) {
-        if(clsList.size() < 5){
-            this.clsList = clsList;
-        }else{
-            return;
-        }
-    }
 
     @Override
     public String introduce(){
