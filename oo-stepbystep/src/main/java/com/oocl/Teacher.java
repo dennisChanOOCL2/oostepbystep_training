@@ -1,10 +1,11 @@
 package com.oocl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Teacher extends Person {
 
-    private List<Class> clsList;
+    private List<Class> clsList = new ArrayList<Class>();
 
     public List<Class> getClsList() {
         return clsList;

@@ -1,11 +1,12 @@
 package com.oocl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Class {
 
     private String name;
-    private List<Student> studentList;
+    private List<Student> studentList = new ArrayList<Student>();
     private Student studentLeader;
     private Teacher teacher;
 
