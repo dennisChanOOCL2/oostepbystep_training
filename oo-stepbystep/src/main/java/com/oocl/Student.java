@@ -21,4 +21,9 @@ public class Student extends Person {
                 "I am a student of class %s. " +
                 "Coding for the glory of OOCL.", this.getName(), this.getAge(), this.getCls().getName());
     };
+
+    public void joinClass(Class cls){
+        cls.addStudentToClass(this);
+    }
+
 }

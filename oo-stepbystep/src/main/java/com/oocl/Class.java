@@ -9,6 +9,16 @@ public class Class {
     private Student studentLeader;
     private Teacher teacher;
 
+    public void addStudentToClass(Student stu){
+        if(!studentList.contains(stu)){
+            studentList.add(stu);
+            stu.setCls(this);
+            if(this.getTeacher() != null){
+
+            }
+        }
+    }
+
     public String getName() {
         return name;
     }
@@ -30,7 +40,9 @@ public class Class {
     }
 
     public void setStudentLeader(Student studentLeader) {
-        this.studentLeader = studentLeader;
+        if(studentList.contains(studentLeader)){
+            this.studentLeader = studentLeader;
+        }
     }
 
     public Teacher getTeacher() {
@@ -38,6 +50,10 @@ public class Class {
     }
 
     public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+        if(!teacher.getClsList().contains(this)
+                && teacher.getClsList().size() < 5){
+            this.teacher = teacher;
+            teacher.getClsList().add(this);
+        }
     }
 }
