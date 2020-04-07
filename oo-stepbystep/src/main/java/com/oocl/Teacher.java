@@ -11,7 +11,11 @@ public class Teacher extends Person {
     }
 
     public void setClsList(List<Class> clsList) {
-        this.clsList = clsList;
+        if(clsList.size() < 5){
+            this.clsList = clsList;
+        }else{
+            return;
+        }
     }
 
     @Override
