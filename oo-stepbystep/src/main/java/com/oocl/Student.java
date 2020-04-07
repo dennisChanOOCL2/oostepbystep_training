@@ -26,6 +26,14 @@ public class Student extends Person {
         return this.introduce() + String.format(" Welcome %s join Klass %s.", stu.getName(), this.cls.getName());
     }
 
+    public String stuLeaderIntrod(){
+        return this.introduce() + String.format(" %s is the leader of Class %s.",
+                this.getCls()
+                        .getStudentLeader()
+                        .getName(),
+                this.getCls().getName());
+    }
+
     public void joinClass(Klass cls){
         cls.addStudentToClass(this);
     }

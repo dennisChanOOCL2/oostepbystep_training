@@ -41,4 +41,30 @@ public class StudentTest {
                 ,student_Tom.welcomeOtherStu(student_Jim));
     }
 
+    @Test
+    public void testOtherStuBecomeLeader(){
+
+        Teacher teacher = new Teacher();
+        teacher.setAge(30);
+        teacher.setName("Woody");
+        Student student_Tom = new Student();
+        student_Tom.setName("Tom");
+        student_Tom.setAge(18);
+
+        Student student_Jim = new Student();
+        student_Jim.setName("Jim");
+
+        Klass cls = new Klass();
+        cls.setName("2");
+        cls.setTeacher(teacher);
+        cls.addStudentToClass(student_Tom);
+        cls.addStudentToClass(student_Jim);
+
+        cls.setStudentLeader(student_Jim);
+
+        assertEquals("My name is Tom. I am 18 years old. I am a student of class 2. Coding for the glory of OOCL. Jim is the leader of Class 2."
+                ,student_Tom.stuLeaderIntrod());
+    }
+
+
 }
