@@ -10,36 +10,30 @@ public class Klass {
     private Student studentLeader;
     private Teacher teacher;
 
-    public String addStudentToClass(Student stu){
-        String resultStr = "";
+    public void addStudentToClass(Student stu){
         if(!studentList.contains(stu)){
             if(this.getTeacher() != null){
-                resultStr += this.getTeacher().welcomeStu(stu, this);
+               this.getTeacher().welcomeStu(stu, this);
             }
             for(Student inClassStu : studentList){
-                resultStr += inClassStu.welcomeOtherStu(stu);
+                inClassStu.welcomeOtherStu(stu);
             }
             studentList.add(stu);
             stu.setCls(this);
         }
-        return "Student already in class!";
     }
 
-    public String assignLeaderToClass(Student stu){
-        String resultStr = "";
+    public void assignLeaderToClass(Student stu){
         this.setStudentLeader(stu);
         if(this.getStudentLeader() != null){
             if(this.getTeacher() != null){
-                resultStr += this.getTeacher().introduceStuLeader(stu, this);
+                this.getTeacher().introduceStuLeader(stu, this);
             }
             for(Student inClassStu : this.getStudentList()){
                 if(inClassStu != this.getStudentLeader()){
-                    resultStr += inClassStu.stuLeaderIntrod();
+                    inClassStu.stuLeaderIntrod();
                 }
             }
-            return resultStr;
-        }else{
-            return "Student are not in the class ! Cannot assign leader";
         }
     }
 

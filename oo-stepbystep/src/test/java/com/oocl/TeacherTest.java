@@ -27,11 +27,12 @@ public class TeacherTest {
         Klass cls = new Klass();
         cls.setName("2");
         cls.setTeacher(teacher);
+        cls.addStudentToClass(student);
         assertEquals("My name is Woody. " +
                         "I am 30 years old. " +
                         "Teaching for the future of world." +
                         " Welcome Tom join Klass 2."
-                ,teacher.welcomeStu(student, cls));
+                ,teacher.getWelcomeMessage().get(cls.getName()+student.getName()));
     }
 
     @Test
@@ -45,7 +46,10 @@ public class TeacherTest {
         cls.setName("2");
         cls.setTeacher(teacher);
         cls.addStudentToClass(student);
+
+        cls.assignLeaderToClass(student);
+
         assertEquals("My name is Woody. I am 30 years old. Teaching for the future of world. Tom is the leader of Klass 2."
-                ,cls.assignLeaderToClass(student));
+                ,teacher.getIntrodStuLeaderMsg().get(cls.getName()+student.getName()));
     }
 }
