@@ -22,7 +22,7 @@ public class Klass {
             studentList.add(stu);
             stu.setCls(this);
         }
-        return "";
+        return "Student already in class!";
     }
 
     public String assignLeaderToClass(Student stu){
@@ -39,7 +39,7 @@ public class Klass {
             }
             return resultStr;
         }else{
-            return resultStr;
+            return "Student are not in the class ! Cannot assign leader";
         }
     }
 
