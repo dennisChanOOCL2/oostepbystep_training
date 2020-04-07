@@ -4,9 +4,18 @@ import java.util.List;
 
 public class Class {
 
+    private String name;
     private List<Student> studentList;
     private Student studentLeader;
     private Teacher teacher;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public List<Student> getStudentList() {
         return studentList;
