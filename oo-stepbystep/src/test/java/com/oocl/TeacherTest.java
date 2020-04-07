@@ -34,4 +34,19 @@ public class TeacherTest {
                         " Welcome Tom join Class 2."
                 ,cls.addStudentToClass(student));
     }
+
+    @Test
+    public void testAssignStuLeaderToClass() {
+        Teacher teacher = new Teacher();
+        teacher.setAge(30);
+        teacher.setName("Woody");
+        Student student = new Student();
+        student.setName("Tom");
+        Class cls = new Class();
+        cls.setName("2");
+        cls.setTeacher(teacher);
+        cls.addStudentToClass(student);
+        assertEquals("My name is Woody. I am 30 years old. Teaching for the future of world. Tom is the leader of Class 2."
+                ,cls.assignLeaderToClass(student));
+    }
 }

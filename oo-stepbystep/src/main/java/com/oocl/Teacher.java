@@ -29,4 +29,8 @@ public class Teacher extends Person {
     public String welcomeStu(Student stu, Class cls){
         return this.introduce() +  String.format(" Welcome %s join Class %s.", stu.getName(), cls.getName());
     }
+
+    public String introduceStuLeader(Student stu, Class cls){
+        return this.introduce() +  String.format(" %s is the leader of Class %s.", stu.getName(), cls.getName());
+    }
 }

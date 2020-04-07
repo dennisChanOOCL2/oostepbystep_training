@@ -21,6 +21,19 @@ public class Class {
         return "";
     }
 
+    public String assignLeaderToClass(Student stu){
+        this.setStudentLeader(stu);
+        if(this.getStudentLeader() != null){
+            if(this.getTeacher() != null){
+                return this.getTeacher().introduceStuLeader(stu, this);
+            }
+            return "";
+        }else{
+            return "";
+        }
+    }
+
+
     public String getName() {
         return name;
     }

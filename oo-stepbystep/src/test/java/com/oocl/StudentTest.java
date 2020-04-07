@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class StudentTest {
 
     @Test
-    public void testPrintMessage() {
+    public void testIntroduce() {
         Student student = new Student();
         student.setAge(18);
         Class cls = new Class();
