@@ -26,14 +26,20 @@ public class Klass {
     }
 
     public String assignLeaderToClass(Student stu){
+        String resultStr = "";
         this.setStudentLeader(stu);
         if(this.getStudentLeader() != null){
             if(this.getTeacher() != null){
-                return this.getTeacher().introduceStuLeader(stu, this);
+                resultStr += this.getTeacher().introduceStuLeader(stu, this);
             }
-            return "";
+            for(Student inClassStu : this.getStudentList()){
+                if(inClassStu != this.getStudentLeader()){
+                    resultStr += inClassStu.stuLeaderIntrod();
+                }
+            }
+            return resultStr;
         }else{
-            return "";
+            return resultStr;
         }
     }
 
