@@ -9,14 +9,15 @@ public class Class {
     private Student studentLeader;
     private Teacher teacher;
 
-    public void addStudentToClass(Student stu){
+    public String addStudentToClass(Student stu){
         if(!studentList.contains(stu)){
             studentList.add(stu);
             stu.setCls(this);
             if(this.getTeacher() != null){
-
+                return this.getTeacher().welcomeStu(stu, this);
             }
         }
+        return "";
     }
 
     public String getName() {
