@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Teacher extends Person {
 
-    private List<Class> clsList = new ArrayList<Class>();
+    private List<Klass> clsList = new ArrayList<Klass>();
 
-    public List<Class> getClsList() {
+    public List<Klass> getClsList() {
         return clsList;
     }
 
-    public void setClsList(List<Class> clsList) {
+    public void setClsList(List<Klass> clsList) {
         if(clsList.size() < 5){
             this.clsList = clsList;
         }else{
@@ -26,11 +26,11 @@ public class Teacher extends Person {
                 "Teaching for the future of world.", this.getName(), this.getAge());
     };
 
-    public String welcomeStu(Student stu, Class cls){
-        return this.introduce() +  String.format(" Welcome %s join Class %s.", stu.getName(), cls.getName());
+    public String welcomeStu(Student stu, Klass cls){
+        return this.introduce() +  String.format(" Welcome %s join Klass %s.", stu.getName(), cls.getName());
     }
 
-    public String introduceStuLeader(Student stu, Class cls){
-        return this.introduce() +  String.format(" %s is the leader of Class %s.", stu.getName(), cls.getName());
+    public String introduceStuLeader(Student stu, Klass cls){
+        return this.introduce() +  String.format(" %s is the leader of Klass %s.", stu.getName(), cls.getName());
     }
 }

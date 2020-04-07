@@ -16,7 +16,7 @@ public class TeacherTest {
                 "I am 30 years old. Teaching for the future of world."
                 ,teacher.introduce());
     }
-    // My name is Woody. I am 30 years old. Teaching for the future of world. Welcome Tom join Class 2.
+    // My name is Woody. I am 30 years old. Teaching for the future of world. Welcome Tom join Klass 2.
 
     @Test
     public void testAddStudToClass() {
@@ -25,13 +25,13 @@ public class TeacherTest {
         teacher.setName("Woody");
         Student student = new Student();
         student.setName("Tom");
-        Class cls = new Class();
+        Klass cls = new Klass();
         cls.setName("2");
         cls.setTeacher(teacher);
         assertEquals("My name is Woody. " +
                         "I am 30 years old. " +
                         "Teaching for the future of world." +
-                        " Welcome Tom join Class 2."
+                        " Welcome Tom join Klass 2."
                 ,cls.addStudentToClass(student));
     }
 
@@ -42,11 +42,11 @@ public class TeacherTest {
         teacher.setName("Woody");
         Student student = new Student();
         student.setName("Tom");
-        Class cls = new Class();
+        Klass cls = new Klass();
         cls.setName("2");
         cls.setTeacher(teacher);
         cls.addStudentToClass(student);
-        assertEquals("My name is Woody. I am 30 years old. Teaching for the future of world. Tom is the leader of Class 2."
+        assertEquals("My name is Woody. I am 30 years old. Teaching for the future of world. Tom is the leader of Klass 2."
                 ,cls.assignLeaderToClass(student));
     }
 }

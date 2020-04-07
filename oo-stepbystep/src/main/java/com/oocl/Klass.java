@@ -3,7 +3,7 @@ package com.oocl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class {
+public class Klass {
 
     private String name;
     private List<Student> studentList = new ArrayList<Student>();
@@ -11,12 +11,16 @@ public class Class {
     private Teacher teacher;
 
     public String addStudentToClass(Student stu){
+        String resultStr = "";
         if(!studentList.contains(stu)){
+            if(this.getTeacher() != null){
+                resultStr += this.getTeacher().welcomeStu(stu, this);
+            }
+            for(Student inClassStu : studentList){
+                resultStr += inClassStu.welcomeOtherStu(stu);
+            }
             studentList.add(stu);
             stu.setCls(this);
-            if(this.getTeacher() != null){
-                return this.getTeacher().welcomeStu(stu, this);
-            }
         }
         return "";
     }

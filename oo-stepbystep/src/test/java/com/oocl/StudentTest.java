@@ -10,7 +10,7 @@ public class StudentTest {
     public void testIntroduce() {
         Student student = new Student();
         student.setAge(18);
-        Class cls = new Class();
+        Klass cls = new Klass();
         cls.setName("2");
         student.setCls(cls);
         student.setName("Tom");
@@ -19,4 +19,26 @@ public class StudentTest {
                         "Coding for the glory of OOCL."
                 ,student.introduce());
     }
+//My name is Tom. I am 18 years old. I am a student of class 2. Coding for the glory of OOCL. Welcome Jim join Klass 2.
+    @Test
+    public void testWelcomeOtherStu(){
+
+        Teacher teacher = new Teacher();
+        teacher.setAge(30);
+        teacher.setName("Woody");
+        Student student_Tom = new Student();
+        student_Tom.setName("Tom");
+        student_Tom.setAge(18);
+        Student student_Jim = new Student();
+        student_Jim.setName("Jim");
+
+        Klass cls = new Klass();
+        cls.setName("2");
+        cls.setTeacher(teacher);
+        cls.addStudentToClass(student_Tom);
+
+        assertEquals("My name is Tom. I am 18 years old. I am a student of class 2. Coding for the glory of OOCL. Welcome Jim join Klass 2."
+                ,student_Tom.welcomeOtherStu(student_Jim));
+    }
+
 }

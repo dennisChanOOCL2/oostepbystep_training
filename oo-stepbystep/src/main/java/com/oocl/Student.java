@@ -2,15 +2,15 @@ package com.oocl;
 
 public class Student extends Person {
 
-    private Class cls;
+    private Klass cls;
 
     @Override
-    public Class getCls() {
+    public Klass getCls() {
         return cls;
     }
 
     @Override
-    public void setCls(Class cls) {
+    public void setCls(Klass cls) {
         this.cls = cls;
     }
 
@@ -22,7 +22,11 @@ public class Student extends Person {
                 "Coding for the glory of OOCL.", this.getName(), this.getAge(), this.getCls().getName());
     };
 
-    public void joinClass(Class cls){
+    public String welcomeOtherStu(Student stu){
+        return this.introduce() + String.format(" Welcome %s join Klass %s.", stu.getName(), this.cls.getName());
+    }
+
+    public void joinClass(Klass cls){
         cls.addStudentToClass(this);
     }
 

@@ -3,7 +3,7 @@ package com.oocl;
 public class Person {
     private String name;
     private int age;
-    private Class cls;
+    private Klass cls;
 
     public String getName() {
         return name;
@@ -21,11 +21,11 @@ public class Person {
         this.age = age;
     }
 
-    public Class getCls() {
+    public Klass getCls() {
         return cls;
     }
 
-    public void setCls(Class cls) {
+    public void setCls(Klass cls) {
         this.cls = cls;
     }
 
