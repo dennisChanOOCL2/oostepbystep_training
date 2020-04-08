@@ -30,6 +30,6 @@ public class Person {
     }
 
     public String introduce(){
-        return String.format("There is a person who has name and age. He can introduce himself, like: My name is %s. I am %s years old.", this.getName(), this.getAge());
+        return String.format("My name is %s. I am %s years old. ", this.getName(), this.getAge());
     };
 }

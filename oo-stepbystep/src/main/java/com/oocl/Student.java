@@ -1,6 +1,5 @@
 package com.oocl;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,10 +21,9 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        return String.format("My name is %s. " +
-                "I am %s years old. " +
+        return String.format(super.introduce() +
                 "I am a student of class %s. " +
-                "Coding for the glory of OOCL.", this.getName(), this.getAge(), this.getCls().getName());
+                "Coding for the glory of OOCL.", this.getCls().getName());
     }
 
     ;
@@ -40,9 +38,7 @@ public class Student extends Person {
 
     public void stuLeaderIntrod() {
         String stuLeaderMsg = this.introduce() + String.format(" %s is the leader of Class %s.",
-                this.getCls()
-                        .getStudentLeader()
-                        .getName(),
+                this.getCls().getStudentLeader().getName(),
                 this.getCls().getName());
         String key = this.getCls().getName()+this.getCls().getStudentLeader().getName();
         if(stuLeaderMessages.get(key) == null){

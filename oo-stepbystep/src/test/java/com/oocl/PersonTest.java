@@ -11,9 +11,7 @@ public class PersonTest {
         Person person = new Person();
         person.setAge(21);
         person.setName("Tom");
-        assertEquals("There is a person who has name and age." +
-                " He can introduce himself, like:" +
-                " My name is Tom. I am 21 years old."
+        assertEquals("My name is Tom. I am 21 years old. "
                 ,person.introduce());
     }
 }

@@ -50,10 +50,6 @@ public class Klass {
         return studentList;
     }
 
-    public void setStudentList(List<Student> studentList) {
-        this.studentList = studentList;
-    }
-
     public Student getStudentLeader() {
         return studentLeader;
     }
